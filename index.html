@@ -3,113 +3,344 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lungile Phakathi - Portfolio</title>
+  <title>Lungile Phakathi | Professional Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: #f0f3f7; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
     header {
-      background-color: #2b7a78;
-      color: white;
+      background: linear-gradient(135deg, rgba(255,182,193,0.85), rgba(147,112,219,0.85)); /* shiny pink-purple gradient */
       text-align: center;
-      padding: 2rem 0;
+      padding: 6rem 1rem 8rem;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow: hidden;
     }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid white;
-      margin-bottom: 1rem;
+    .header-container { position: relative; z-index: 2; }
+
+    /* PROFILE PIC */
+    
+    .profile-pic {
+      border-left: 9px solid #d35594;
+      width: 180px;
+      height: 180px;
+      border-radius: 20px; /* rounded square */
+     
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      object-fit: cover;
+      transition: transform 0.4s, box-shadow 0.4s;
     }
-    header h1 {
-      margin: 0;
+    .profile-pic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     }
-    nav {
-      text-align: center;
+
+    /* NAME & SUBTITLE WITH SHINE */
+    .name-heading {
+      font-size: 3.2rem;
       margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ff69b4, #ffb6c1, #ba55d3, #ff69b4);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.2);
     }
+
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: #ffffffdd;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
     nav a {
-      color: white;
+      color: #fff;
+      font-weight: 600;
+      margin: 0 1.2rem;
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
+      font-size: 1.05rem;
+      position: relative;
+      transition: 0.3s;
     }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      margin-top: 5px;
+      right: 0;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
+      background: #fff;
+    }
+
+    /* SECTIONS */
     section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: -6rem auto 3rem;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 10;
+      transition: transform 0.3s;
     }
-    h2 {
-      color: #2b7a78;
+    section:hover { transform: translateY(-3px); }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #ba55d3; border-bottom: 3px solid #eee; padding-bottom: 0.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+
+    /* LISTS */
+    ul { list-style: none; padding-left: 0; }
+    ul li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+    ul li::before { content:"\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #ba55d3; }
+
+    /* SKILL BARS */
+    .skill-bar { margin-bottom: 1rem; }
+    .skill-bar span { display: block; font-weight: 500; margin-bottom: 0.3rem; }
+    .bar { height: 14px; width: 100%; background: #eee; border-radius: 10px; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg,#ff69b4,#ba55d3); border-radius: 10px; transition: width 1.5s; }
+
+    /* PROJECTS */
+    .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.5rem; }
+    .project-card { background: #f0f3f7; padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+    .project-card h3 { color: #ff69b4; margin-bottom: 0.3rem; }
+    .tech-stack { font-size: 0.9rem; font-weight: 500; color: #555; margin-top: 0.5rem; }
+
+    /* EXPERIENCE */
+    .experience-container { display: flex; flex-direction: column; gap: 1.5rem; }
+    .experience-card { padding: 1.5rem; border-left: 6px solid #ba55d3; background: #fdfdfd; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+    .experience-card h3 { color: #ff69b4; margin-bottom: 0.3rem; }
+    .experience-card span { font-size: 0.9rem; color: #555; }
+
+    /* CONTACT */
+    .contact p { margin-bottom: 0.8rem; }
+    .social-icons { margin-top: 1rem; }
+    .social-icons a { margin-right: 1rem; font-size: 1.4rem; color: #ff69b4; transition: 0.3s; }
+    .social-icons a:hover { color: #ba55d3; transform: scale(1.2); }
+
+    /* CV SECTION */
+    .cv-box {
+      text-align: center;
+      background: linear-gradient(135deg,#ffe0f0,#f2e6ff);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
-    .project {
+
+    .cv-box p {
+      font-size: 1.05rem;
       margin-bottom: 1.5rem;
     }
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      background-color: #2b7a78;
-      color: white;
-      margin-top: 2rem;
+    /* BUTTONS */
+    .btn { display: inline-block; padding: 0.6rem 1.2rem; margin-top: 0.5rem; border-radius: 6px; background: linear-gradient(135deg,#ff69b4,#ba55d3); color: #fff; font-weight: 600; transition: 0.3s; cursor: pointer; }
+    .btn:hover { background: linear-gradient(135deg,#ba55d3,#ff69b4); box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 1.5rem; background: #333; color: #fff; margin-top: 3rem; font-size: 0.95rem; }
+
+    /* RESPONSIVE */
+    @media (max-width:768px){
+      section{margin:2rem 1rem;padding:2rem;}
+      header h1{font-size:2.2rem;}
+      header p{font-size:1rem;}
+      .projects-container{grid-template-columns:1fr;}
     }
+
+    /* BACK TO TOP BUTTON */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #ff69b4, #ba55d3);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(186,85,211,0.6);
+}
+
   </style>
+  
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <!-- Replace 'my-photo.jpg' with the name of your picture -->
-    <img src="my-photo.jpg" alt="Lungile Phakathi Photo">
-    <h1>Lungile Phakathi</h1>
-    <p>Computer Science Student | Aspiring IT Professional</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="header-container">
+      
+      <img src="my_photo3.jpeg" alt="Lungile Phakathi Photo" class="profile-pic">
+      
+      <h1 class="name-heading">Lungile Phakathi</h1>
+      <p class="subtitle">Software Developer & Data Analyst | IT Professional</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+         <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a Computer Science student currently completing my diploma and seeking a Work Integrated Learning (WIL) opportunity. I am passionate about IT, problem-solving, and building solutions that make a difference.
+      Highly motivated Computer Science Diploma graduate with hands-on experience in software development, IT support, and data-driven applications. Completed a 6-month Work Integrated Learning (WIL) program gaining experience in dashboards, automation, and full-stack development. Passionate about building impactful solutions.
     </p>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Python, Java, Kotlin, Basic PHP</li>
-      <li>PostgreSQL & MySQL databases</li>
-      <li>HTML, CSS, Basic JavaScript</li>
-      <li>Troubleshooting & IT Support</li>
-    </ul>
+    <h2>Technical Skills</h2>
+   
+    <div class="skill-bar"><span>Java</span><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+    <div class="skill-bar"><span>PHP & Laravel</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+     <div class="skill-bar"><span>Python</span><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+    <div class="skill-bar"><span>JavaScript / Web Development</span><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+    <div class="skill-bar"><span>MySQL / PostgreSQL</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+     <div class="skill-bar"><span>Power BI (Dashboards & Reporting)</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>EduBridge Rigistration Platform</h3>
-      <p>
-        We was developed a system to assist students in registering modules at other universities. Built with Python for backend logic and PostgreSQL for database management.
-      </p>
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Work Integrated Learning Experience</h2>
+    <div class="experience-container">
+      <div class="experience-card">
+        <h3>Moepi Publishing – Data Science & IT Support Intern</h3>
+        <span>Aug 2025 – Jan 2026 | 6 Months</span>
+        <p>Designed and maintained Power BI dashboards, automated data processes using Python, developed prototype dashboards with Laravel/PHP, HTML, CSS, and JavaScript. Collaborated with teams to enhance usability and reliability of reporting systems.</p>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:lungiphakz@gmail.com">lungiphakz@gmail.com</a></p>
-    <p>Phone: 079 102 8667</p>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Smart Township Portal</h3>
+        <p>Digital platform for township service reporting. Residents submit issues while administrators efficiently manage and resolve requests.</p>
+        <p class="tech-stack"><strong>Technologies:</strong> PHP, MySQL, HTML, CSS</p>
+      </div>
+      <div class="project-card">
+        <h3>EduBridge Registration Platform</h3>
+        <p>Web system assisting students with module registration across universities, including backend logic and UX optimization.</p>
+        <p class="tech-stack"><strong>Technologies:</strong> Python, PostgreSQL, HTML, CSS</p>
+      </div>
+    </div>
   </section>
 
+  <section id="cv">
+  <h2>Curriculum Vitae</h2>
+  <div class="cv-box">
+    <p>
+      Download my professional CV containing education, experience,
+      technical skills, and Work Integrated Learning details.
+    </p>
+    <a href="documents/Lungile-phakathi-CV.pdf" class="btn" target="_blank">
+      <i class="fas fa-file-download"></i> Download CV
+    </a>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p><strong>Email:</strong> <a href="mailto:lungiphakz@gmail.com">lungiphakz@gmail.com</a></p>
+    <p><strong>Phone:</strong> 079 102 8667</p>
+    <p><strong>Location:</strong> South Africa</p>
+<div class="social-icons">
+  <a href="https://github.com/LungiPhakz" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://linkedin.com/in/lungile-phakathi-542aa0366" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://wa.me/27791028667?text=Hello%20Lungile,%20I%20viewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
+     target="_blank" title="Message me on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Lungile Phakathi. All Rights Reserved.</p>
+    &copy; 2026 Lungile Phakathi | Professional IT Portfolio
   </footer>
+
+  <script>
+    // Animate skill bars
+    window.addEventListener('load', () => {
+      const fills = document.querySelectorAll('.bar-fill');
+      fills.forEach(fill => { fill.style.width = fill.style.width; });
+    });
+  </script>
+
+    <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+
 </body>
 </html>
