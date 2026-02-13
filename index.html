@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lungile Phakathi | Professional Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: #f0f3f7; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, rgba(255,182,193,0.85), rgba(147,112,219,0.85)); /* shiny pink-purple gradient */
+      text-align: center;
+      padding: 6rem 1rem 8rem;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .header-container { position: relative; z-index: 2; }
+
+    /* PROFILE PIC */
+    
+    .profile-pic {
+      border-left: 9px solid #ffb6c1;
+      width: 200px;
+      height: 180px;
+      border-radius: 20px; /* rounded square */
+     
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      object-fit: cover;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .profile-pic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+
+    /* NAME & SUBTITLE WITH SHINE */
+    .name-heading {
+      font-size: 3.2rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ff69b4, #ffb6c1, #ba55d3, #ff69b4);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: #ffffffdd;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    
+  /*NAVIGATION */
+.main-nav {
+  
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.2rem;
+}
+
+/* BUTTON BASE */
+
+.main-nav a {
+   width: 150px;              
+  text-align: center;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  color: #fff;
+   
+  background: linear-gradient(135deg,  #ffb6c1, #ba55d3);
+  border-radius: 40px;
+  box-shadow:
+    0 10px 25px rgba(156, 39, 176, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  transition: all 0.45s ease;
+  overflow: hidden;
+}
+.main-nav a i {
+  font-size: 0.9rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Icon reacts on hover */
+.main-nav a:hover i {
+  transform: scale(1.1);
+  color:#ffffff;
+}
+
+/* GLOSSY LIGHT SWEEP */
+.main-nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transition: all 0.7s ease;
+}
+
+.main-nav a:hover::before {
+  left: 150%;
+}
+
+
+/* HOVER MAGIC  */
+.main-nav a:hover {
+  transform: translateY(-4px) scale(1.03);
+  color: #6a1b9a;
+  box-shadow:
+    0 18px 40px rgba(186, 85, 211, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* ACTIVE CLICK FEEL */
+.main-nav a:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow:
+    0 8px 18px rgba(156, 39, 176, 0.35);
+}
+
+
+   
+
+    /* SECTIONS */
+    section {
+      max-width: 1000px;
+      margin: -6rem auto 3rem;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 10;
+      transition: transform 0.3s;
+    }
+    section:hover { transform: translateY(-3px); }
+    h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #ba55d3; border-bottom: 3px solid #eee; padding-bottom: 0.5rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+
+    /* LISTS */
+    ul { list-style: none; padding-left: 0; }
+    ul li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+    ul li::before { content:"\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #ba55d3; }
+
+    /* SKILL BARS */
+    .skill-bar { margin-bottom: 1rem; }
+    .skill-bar span { display: block; font-weight: 500; margin-bottom: 0.3rem; }
+    .bar { height: 14px; width: 100%; background: #eee; border-radius: 10px; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg,#ff69b4,#ba55d3); border-radius: 10px; transition: width 1.5s; }
+
+    /* PROJECTS */
+    .projects-container {
+  display: grid;
+  grid-auto-flow: column;              
+  grid-auto-columns: minmax(280px, 1fr);
+  gap: 1.5rem;
+  overflow-x: auto;                    /* horizontal scroll */
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;       
+}
+/* Hide scrollbar */
+.projects-container::-webkit-scrollbar {
+  height: 8px;
+}
+.projects-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg,#ff69b4,#ba55d3);
+  border-radius: 10px;
+}
+    .project-card { background: #f0f3f7; padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; scroll-snap-align: start; min-width: 280px;}
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+    .project-card h3 { color: #ff69b4; margin-bottom: 0.3rem; }
+    .tech-stack { font-size: 0.9rem; font-weight: 500; color: #555; margin-top: 0.5rem; }
+
+    /* EXPERIENCE */
+    .experience-container { display: flex; flex-direction: column; gap: 1.5rem; }
+    .experience-card { padding: 1.5rem; border-left: 6px solid #ba55d3; background: #fdfdfd; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+    .experience-card h3 { color: #ff69b4; margin-bottom: 0.3rem; }
+    .experience-card span { font-size: 0.9rem; color: #555; }
+
+    /* CONTACT */
+    .contact p { margin-bottom: 0.8rem; }
+    .social-icons { margin-top: 1rem; }
+    .social-icons a { margin-right: 1rem; font-size: 1.4rem; color: #ff69b4; transition: 0.3s; }
+    .social-icons a:hover { color: #ba55d3; transform: scale(1.2); }
+
+    /* CV SECTION */
+    .cv-box {
+      text-align: center;
+      background: linear-gradient(135deg,#ffe0f0,#f2e6ff);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .cv-box p {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+    /* BUTTONS */
+    .btn { display: inline-block; padding: 0.6rem 1.2rem; margin-top: 0.5rem; border-radius: 6px; background: linear-gradient(135deg,#ff69b4,#ba55d3); color: #fff; font-weight: 600; transition: 0.3s; cursor: pointer; }
+    .btn:hover { background: linear-gradient(135deg,#ba55d3,#ff69b4); box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 1.5rem; background: #333; color: #fff; margin-top: 3rem; font-size: 0.95rem; }
+
+    /* RESPONSIVE */
+    @media (max-width:768px){
+      section{margin:2rem 1rem;padding:2rem;}
+      header h1{font-size:2.2rem;}
+      header p{font-size:1rem;}
+      .projects-container{grid-template-columns:1fr;}
+    }
+
+    /* BACK TO TOP BUTTON */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #ff69b4, #ba55d3);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(186,85,211,0.6);
+}
+
+/* TECHNOLOGY ICON BADGES */
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.tech-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #555;
+  background: linear-gradient(135deg,#ffffff,#f3e8ff);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.tech-badge i {
+  color: #ba55d3;
+  font-size: 0.85rem;
+}
+
+  </style>
+  
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      
+      <img src="assets/images/profile.jpeg" alt="Lungile Phakathi Photo" class="profile-pic">
+      
+      <h1 class="name-heading">Lungile Phakathi</h1>
+      <p class="subtitle">Software Developer & Data Analyst | IT Professional</p>
+      <nav class="main-nav">
+  <a href="#about">
+    <i class="fas fa-user"></i>
+    <span>About</span>
+  </a>
+
+  <a href="#skills">
+    <i class="fas fa-code"></i>
+    <span>Skills</span>
+  </a>
+
+  <a href="#experience">
+    <i class="fas fa-briefcase"></i>
+    <span>Experience</span>
+  </a>
+
+  <a href="#projects">
+    <i class="fas fa-layer-group"></i>
+    <span>Projects</span>
+  </a>
+
+  <a href="#cv">
+    <i class="fas fa-file-alt"></i>
+    <span>CV</span>
+  </a>
+
+  <a href="#contact">
+    <i class="fas fa-envelope"></i>
+    <span>Contact</span>
+  </a>
+</nav>
+
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Highly motivated Computer Science Diploma graduate with hands-on experience in software development, IT support, and data-driven applications. Completed a 6-month Work Integrated Learning (WIL) program gaining experience in dashboards, automation, and full-stack development. Passionate about building impactful solutions.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+   
+    <div class="skill-bar"><span>Java</span><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+    <div class="skill-bar"><span>PHP & Laravel</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+     <div class="skill-bar"><span>Python</span><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+     <div class="skill-bar"><span>Kotlin</span><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+    
+    <div class="skill-bar"><span>MySQL / PostgreSQL</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+     <div class="skill-bar"><span>Power BI (Dashboards & Reporting)</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+     <div class="skill-bar"><span>JavaScript / Web Development</span><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Work Integrated Learning Experience</h2>
+    <div class="experience-container">
+      <div class="experience-card">
+        <h3>Moepi Publishing – Data Science & IT Support Intern</h3>
+        <span>Aug 2025 – Jan 2026 | 6 Months</span>
+        <p>Designed and maintained Power BI dashboards, automated data processes using Python, developed prototype dashboards with Laravel/PHP, HTML, CSS, and JavaScript. Collaborated with teams to enhance usability and reliability of reporting systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p style="font-size:0.9rem;color:#777;margin-bottom:1rem;">
+  ← Scroll horizontally to view more projects →
+</p>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Smart Township Portal</h3>
+        <p>Digital platform for township service reporting. Residents submit issues while administrators efficiently manage and resolve requests.</p>
+        <div class="tech-icons">
+  <div class="tech-badge"><i class="fab fa-php"></i> PHP</div>
+  <div class="tech-badge"><i class="fas fa-database"></i> MySQL</div>
+  <div class="tech-badge"><i class="fab fa-html5"></i> HTML</div>
+  <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+  <div class="tech-badge"><i class="fab fa-js"></i> JavaScript</div>
+</div>
+      </div>
+      <div class="project-card">
+        <h3>EduBridge Registration Platform</h3>
+        <p>Web system assisting students with module registration across universities, including backend logic and UX optimization.</p>
+        <div class="tech-icons">
+  <div class="tech-badge"><i class="fab fa-python"></i> Python</div>
+  <div class="tech-badge"><i class="fas fa-database"></i> PostgreSQL</div>
+  <div class="tech-badge"><i class="fab fa-html5"></i> HTML</div>
+  <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+</div>
+      </div>
+    
+     
+    <div class="project-card">
+      <h3>Tekete SafeSpace</h3>
+      <p>
+        A confidential reporting system designed to help learners, parents, and educators report cases of abuse, bullying, and misconduct in schools. The system supports role-based dashboards for School, District, Provincial, and National administrators.
+      </p>
+      <div class="tech-icons">
+  <div class="tech-badge"><i class="fab fa-laravel"></i> Laravel</div>
+  <div class="tech-badge"><i class="fab fa-php"></i> PHP</div>
+  <div class="tech-badge"><i class="fas fa-database"></i> MySQL</div>
+  <div class="tech-badge"><i class="fab fa-js"></i> JavaScript</div>
+  <div class="tech-badge"><i class="fab fa-html5"></i> HTML</div>
+  <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+</div>
+    </div>
+
+    
+    <div class="project-card">
+      <h3>Tekete Management System</h3>
+      <p>
+        A ticket-based management system that tracks customer queries using unique reference numbers, monitors query status, and improves communication between organizations and clients.
+      </p>
+      <div class="tech-icons">
+  <div class="tech-badge"><i class="fas fa-chart-line"></i> Power BI</div>
+  <div class="tech-badge"><i class="fas fa-database"></i> MySQL</div>
+  <div class="tech-badge"><i class="fab fa-php"></i> PHP</div>
+  <div class="tech-badge"><i class="fab fa-js"></i> JavaScript</div>
+  <div class="tech-badge"><i class="fab fa-html5"></i> HTML</div>
+  <div class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</div>
+</div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section id="cv">
+  <h2>Curriculum Vitae</h2>
+  <div class="cv-box">
+    <p>
+      Download my professional CV containing education, experience,
+      technical skills, and Work Integrated Learning details.
+    </p>
+    <a href="https://drive.google.com/file/d/1hbKbxLEOPggtn2Kujo3HpHXT7qXrzo88/view" class="btn" target="_blank">
+      <i class="fas fa-file-download"></i> Download CV
+    </a>
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p><strong>Email:</strong> <a href="mailto:lungiphakz@gmail.com">lungiphakz@gmail.com</a></p>
+    <p><strong>Phone:</strong> 079 102 8667</p>
+    <p><strong>Location:</strong> South Africa</p>
+<div class="social-icons">
+  <a href="https://github.com/LungiPhakz" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <a href="https://linkedin.com/in/lungile-phakathi-542aa0366" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+
+  <a href="https://wa.me/27791028667?text=Hello%20Lungile,%20I%20viewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity."
+     target="_blank" title="Message me on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+  &copy; <span id="year"></span> Lungile Phakathi | Professional IT Portfolio
+</footer>
+  
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+  <script>
+    // Animate skill bars
+    window.addEventListener('load', () => {
+      const fills = document.querySelectorAll('.bar-fill');
+      fills.forEach(fill => { fill.style.width = fill.style.width; });
+    });
+  </script>
+
+    <!-- BACK TO TOP BUTTON -->
+  <button id="backToTop" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+
+</body>
+</html>
