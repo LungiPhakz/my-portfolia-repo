@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Lungile Phakathi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Lungile.</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="contact-section">
+
+    <!-- LEFT -->
+    <div class="contact-info">
+      <h1>Contact Me</h1>
+      <p>
+        Let’s work together. Feel free to reach out for
+        graduate or junior opportunities in software
+        development or data analysis.
+      </p>
+
+      <p><i class="fas fa-envelope"></i> lungiphakz@gmail.com</p>
+      <p><i class="fas fa-phone"></i> 079 102 8667</p>
+       <p><i class="fas fa-location"></i> South Africa</p>
+
+      <div class="socials">
+        <a href="https://github.com/LungiPhakz" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/lungile-phakathi-542aa0366" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/27791028667" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+   <form class="contact-form"
+   id="contactForm"
+      action="https://formsubmit.co/lungiphakz@gmail.com"
+      method="POST">
+
+  
+
+  <!-- FormSubmit settings -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="text" name="subject" placeholder="Subject" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+<div class="success-popup" id="successPopup">
+  <div class="popup-box">
+    <i class="fas fa-check-circle"></i>
+    <h3>Message Sent!</h3>
+    <p>Thank you for contacting me. I’ll get back to you shortly.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+  </section>
+<script src="theme.js"></script>
+<script>
+  const form = document.getElementById("contactForm");
+  const popup = document.getElementById("successPopup");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    form.reset();
+    popup.classList.add("active");
+  });
+
+  function closePopup() {
+    popup.classList.remove("active");
+  }
+</script>
+<script src="js/theme.js"></script>
+</body>
+</html>
