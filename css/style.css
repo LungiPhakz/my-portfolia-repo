@@ -24,8 +24,10 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 8%;
+   position: relative;
   box-shadow: 0 0 20px rgba(34,211,238,0.4);
 }
+
 
 .logo {
   font-size: 1.5rem;
@@ -49,6 +51,11 @@ body {
 .nav-links a.active,
 .nav-links a:hover {
   color: var(--accent);
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+  display: none;
 }
 
 /* THEME SWITCHER */
@@ -153,6 +160,7 @@ body {
   color: var(--muted);
 }
 
+
 .socials a:hover {
   color: var(--accent);
    transform: translateY(-3px);
@@ -180,7 +188,7 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
