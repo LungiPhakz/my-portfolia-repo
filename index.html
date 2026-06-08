@@ -3,78 +3,596 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lungile Phakathi | Portfolio</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <link rel="stylesheet" href="css/style.css">
+  <title>Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Lungile.</div>
+  <!-- HEADER -->
+  <header>
+    <div class="container ">
+      <div class="logo">Lungile</div>
 
-    <div class="menu-toggle" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
+      <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-
-    <div class="theme-switcher">
-       
-      <button onclick="setTheme('cyan')" title="Cyan"></button>
-      <button onclick="setTheme('purple')" title="Purple"></button>
-      <button onclick="setTheme('red')" title="Red"></button>
-      <p class="theme-hint">Switch theme colors</p>
+      <div class="menu-toggle" id="menuToggle">
+  <i class="fas fa-bars"></i>
+</div>
     </div>
-  </nav>
-
+  </header>
+<div class="page-overlay">
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-text">
-      <h4>Hello, My name is</h4>
-      <h1>Lungile <span>Phakathi</span></h1>
-      <h2>Software Developer <span>&</span> Data Analyst</h2>
+ <section id="home" class="hero">
+       
+       
+  <div class="container hero-grid">
 
-      <p>
-  Computer Science Graduate specializing in full-stack development,
-  data systems, dashboards, and backend automation using Laravel,
-  Python, and modern web technologies.
-</p>
+    <!-- LEFT SIDE -->
+    <div class="hero-left">
+      <p class="badge">🚀 Available for Work</p>
+
+      <h1>
+        Building <span>Modern Web Apps</span><br/>
+        That Scale & Impress
+      </h1>
+
+      <p class="subtitle">
+        I design and develop fast, responsive and modern web applications
+        using clean architecture and modern UI principles.
+      </p>
 
       <div class="hero-buttons">
-        <a href="projects.html" class="btn primary">View Projects</a>
-        <a href="https://drive.google.com/file/d/1hbKbxLEOPggtn2Kujo3HpHXT7qXrzo88/view" class="btn outline">Download CV</a>
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Contact Me</a>
       </div>
 
-      <div class="socials">
-        <a href="https://github.com/LungiPhakz" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/lungile-phakathi-542aa0366" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://wa.me/27791028667" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <div class="hero-mini-stats">
+        <div><strong>2+</strong><span>Projects</span></div>
+        <div><strong>1+</strong><span>Years</span></div>
+        <div><strong>Full Stack</strong><span>Developer</span></div>
       </div>
     </div>
 
-    <div class="hero-image">
-      <img src="assets/images/profile3.jpeg" alt="Lungile Phakathi">
-    </div>
-  </section>
+    <!-- RIGHT SIDE -->
+    <div class="hero-right">
 
-  <script src="js/theme.js"></script>
-  <script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
+      <!-- floating profile card -->
+      <div class="profile-card">
+
+        <div class="avatar">
+          <div class="glow"></div>
+          <span>👨‍💻</span>
+        </div>
+
+        <h3>Lungile Phakathi</h3>
+        <p>Full Stack Developer</p>
+
+        <div class="hero-skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+          <span>Laravel</span>
+        </div>
+
+        <div class="code-box">
+<pre>
+const dev = {
+  name: "Lungile",
+  role: "Full Stack",
+  passion: "Building clean UI"
+};
+</pre>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+
+  <div class="container about-grid">
+
+    <!-- LEFT SIDE: TEXT -->
+    <div class="about-text">
+
+      <p class="section-badge">👨‍💻 About Me</p>
+
+      <h2>
+        Turning Ideas into <span>Real-World Systems</span>
+      </h2>
+
+      <p class="intro">
+        I am a Computer Science Diploma graduate with hands-on experience in
+        full-stack development, data analytics, and IT systems support.
+        I specialize in building scalable, production-ready applications and
+        solving real deployment challenges.
+      </p>
+
+      <p>
+        I recently completed a Work Integrated Learning (WIL) program where I built
+        and deployed real-world systems used for data management, workflow automation,
+        and authentication.
+      </p>
+
+      <p>
+        My core expertise includes <b>Laravel, PHP, Java, Python, JavaScript</b>,
+        with strong experience in APIs, dashboards, cloud deployment, and production debugging.
+      </p>
+
+      <div class="about-highlights">
+
+        <div>
+          <h4>💻 Development</h4>
+          <p>Full-stack systems using Laravel, APIs, authentication & dashboards</p>
+        </div>
+
+        <div>
+          <h4>☁️ Cloud & Deployment</h4>
+          <p>Railway hosting, environment setup, SMTP, DNS & production systems</p>
+        </div>
+
+        <div>
+          <h4>📊 Data & Analytics</h4>
+          <p>Power BI dashboards, SQL queries, and data visualization systems</p>
+        </div>
+
+        <div>
+          <h4>🔐 System Integration</h4>
+          <p>OTP login systems, email APIs (Resend), role-based access control</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE: IMAGE PANEL -->
+    <div class="about-image">
+
+      <div class="image-card">
+
+        <!-- MY PHOTO HERE -->
+        <img src="assets/img/profile.jpeg" alt="My Profile Photo">
+
+        <div class="status">
+          <span class="dot"></span>
+          Available for Junior Developer Roles
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- SKILLS SECTION -->
+ <section id="skills" class="skills">
+
+  <div class="container">
+
+    <div class="skills-header">
+        
+      <span class="skills-badge">My Tech Stack</span>
+
+      <h2>
+        Technologies I Use To Build
+        <span>Modern Solutions</span>
+      </h2>
+
+      <p>
+        A curated collection of tools, frameworks, and technologies I use
+        to build scalable, production-ready applications.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <i class="fa-brands fa-html5"></i>
+        <div>
+          <h3>HTML5</h3>
+          <p>Frontend Structure</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-css3-alt"></i>
+        <div>
+          <h3>CSS3</h3>
+          <p>UI / Styling</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-js"></i>
+        <div>
+          <h3>JavaScript</h3>
+          <p>Frontend Logic</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-laravel"></i>
+        <div>
+          <h3>Laravel</h3>
+          <p>Backend Framework</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-php"></i>
+        <div>
+          <h3>PHP</h3>
+          <p>Server Side</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-java"></i>
+        <div>
+          <h3>Java</h3>
+          <p>OOP Programming</p>
+        </div>
+        <span class="level">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-python"></i>
+        <div>
+          <h3>Python</h3>
+          <p>Automation / Data</p>
+        </div>
+        <span class="level">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <div>
+          <h3>MySQL</h3>
+          <p>Database Design</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-chart-column"></i>
+        <div>
+          <h3>Power BI</h3>
+          <p>Data Analytics</p>
+        </div>
+        <span class="level">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-git-alt"></i>
+        <div>
+          <h3>Git</h3>
+          <p>Version Control</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-cloud"></i>
+        <div>
+          <h3>Railway</h3>
+          <p>Deployment</p>
+        </div>
+        <span class="level">Intermediate</span>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-plug"></i>
+        <div>
+          <h3>REST API</h3>
+          <p>Integration</p>
+        </div>
+        <span class="level">Advanced</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- PROJECTS SECTION -->
+ <section id="projects" class="projects">
+
+  <div class="container">
+
+    <div class="skills-header">
+        <span class="section-badge">My Project</span>
+      <h2>Featured <span>Projects</span></h2>
+      <p>Real systems I designed, built, and deployed during my development journey.</p>
+    </div>
+
+    <!-- PROJECT 1 -->
+    <div class="project-case">
+<div class="project-media">
+      <img src="assets/img/letter-system.png" alt="Digital Letter Approval System">
+</div>
+      <div class="project-text">
+        <h3>Digital Letter Approval System</h3>
+
+        <p>
+          This system was built to digitize and automate the traditional manual process of
+          requesting and approving official letters within an organization. The goal was to
+          eliminate paper-based workflows and introduce a structured digital approval pipeline.
+        </p>
+
+        <p>
+          The system uses a role-based access model where users submit requests, managers review
+          them, and administrators have full control over approvals and rejections. Each action
+          is tracked in real time, ensuring transparency and accountability throughout the process.
+        </p>
+
+        <p>
+          I implemented authentication, session management, and database-driven workflows using
+          Laravel and MySQL. Email notifications were integrated to alert users when their requests
+          changed status, improving communication efficiency.
+        </p>
+
+        <p>
+          This project strengthened my understanding of backend architecture, workflow design, and
+          production-ready system development.
+               Live: https://www.communityletters.xyz
+          
+        </p>
+
+        <span>Laravel • PHP • MySQL • Authentication • Workflow Systems</span>
+        
+      </div>
+
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-case reverse">
+<div class="project-media">
+      <img src="assets/img/township-portal.png" alt="Smart Township Portal">
+</div>
+      <div class="project-text">
+        <h3>Smart Township Management Portal</h3>
+
+        <p>
+          This project was designed as a centralized digital platform for managing township operations,
+          including resident records, service requests, and administrative reporting.
+        </p>
+
+        <p>
+          The system allows residents to register, submit service requests, and track progress, while
+          administrators manage data, monitor activity, and generate reports for decision-making.
+        </p>
+
+        <p>
+          I built the backend using PHP and MySQL with structured relational database design. The frontend
+          was designed to be simple, responsive, and accessible to non-technical users.
+        </p>
+
+        <p>
+          This project gave me strong experience in full-stack development, database design, and building
+          real-world systems that solve community-level problems.
+        </p>
+
+        <span>PHP • MySQL • JavaScript • Full Stack Development • System Design</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+        
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="contact-header">
+            <span class="contact-badge">Let's Connect</span>
+
+            <h2>
+                Ready To Build
+                <span>Something Great?</span>
+            </h2>
+
+            <p>
+                Let's work together. Feel free to reach out for
+                graduate or junior opportunities in software
+                development or data analysis.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <!-- LEFT SIDE -->
+            <div class="contact-info">
+
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>lungiphakz@gmail.com</span>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <span>+27 79 102 8667</span>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-location-dot"></i>
+                    <span>South Africa</span>
+                </div>
+
+                <!-- SOCIAL CARD -->
+                <div class="social-card">
+
+                    <h4>Find Me Online</h4>
+
+                    <p>
+                        Connect with me through my professional platforms.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://github.com/LungiPhakz"
+                           target="_blank"
+                           class="github">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="https://linkedin.com/in/lungile-phakathi-542aa0366"
+                           target="_blank"
+                           class="linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="https://wa.me/27791028667"
+                           target="_blank"
+                           class="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <form class="contact-form"
+            id="contactForm"
+            action="https://formsubmit.co/8e68efb10c88555f6bd3f24adb0f44bc"
+            method="POST">
+
+                <input type="text" placeholder="Your Name">
+
+                <input type="email" placeholder="Your Email">
+
+                <input type="text" placeholder="Subject">
+
+                <textarea rows="6"
+                    placeholder="Your Message ..."></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+            <div id="successPopup" class="success-popup">
+    <div class="popup-box">
+        <h3>Message Sent ✅</h3>
+        <p>Thanks for reaching out! I’ll get back to you soon.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+        </div>
+
+    </div>
+
+</section>
+</div>
+
+ <script>
+const cards = document.querySelectorAll('.skill-card');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target); //  run once only
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+cards.forEach(card => {
+  card.classList.remove("show"); // force reset
+  observer.observe(card);
+});
 </script>
+<script>
+  const form = document.getElementById("contactForm");
+  const popup = document.getElementById("successPopup");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 
+          'Accept': 'application/json'
+        }
+      });
+
+      form.reset();
+      popup.classList.add("active");
+
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+
+  function closePopup() {
+    popup.classList.remove("active");
+  }
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> Lungile. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+</script>
+
+   <script>
+document.querySelectorAll('#navMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
+</script>
+
+
 </body>
 </html>
