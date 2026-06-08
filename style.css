@@ -261,8 +261,6 @@ section h2 {
 ========================= */
 
 .about {
-  min-height: 100vh;
-  
   padding: 120px 0;
    
   
@@ -341,7 +339,7 @@ section h2 {
 }
 
 .about-highlights p {
-  font-size: 8px;   
+  font-size: 12px;   
   line-height: 1.5;
   color: rgba(255,255,255,0.65);
   margin: 0;
@@ -550,7 +548,7 @@ section h2 {
 ========================= */
 
 .projects {
-  padding: 80px 0;
+  padding: 120px 0;
   position: relative;
 }
 
@@ -817,7 +815,7 @@ section h2 {
 .project-text p {
   color: rgba(255,255,255,0.65);
   line-height: 1.9;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 14px;
 }
 
@@ -878,6 +876,7 @@ section h2 {
             width: 100%;
             background: rgba(0, 0, 0, 0.55);
             backdrop-filter: blur(3px);
+            
         }
 .contact{
     padding:80px 0;
@@ -1154,46 +1153,45 @@ section h2 {
     transform:translateY(-4px);
 }
 
-/* popup */
+/*toast*/
 
-.success-popup{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.6);
+/* TOAST BASE */
+.toast{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    min-width: 220px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    padding: 14px 20px;
+    border-radius: 12px;
 
-    opacity:0;
-    visibility:hidden;
-    transition:.3s;
+    background: #00F5A0;
+    color: #0b0b0b;
+    font-weight: 600;
+    font-size: 14px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(-20px);
+
+    transition: all 0.3s ease;
+
+    z-index: 99999;
+
+    pointer-events: none;
 }
 
-.success-popup.active{
-    opacity:1;
-    visibility:visible;
+/* SHOW STATE */
+.toast.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.popup-box{
-    background:#111;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    border:1px solid rgba(255,255,255,.1);
-}
-
-.popup-box button{
-    margin-top:15px;
-    padding:10px 20px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    background:#00F5A0;
-    font-weight:bold;
+/* OPTIONAL: ERROR STATE */
+.toast.error{
+    background: #ff4d4d;
+    color: #fff;
 }
 
 /* RESPONSIVE */
